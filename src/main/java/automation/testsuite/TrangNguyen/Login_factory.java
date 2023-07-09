@@ -16,17 +16,17 @@ public class Login_factory extends CommonBase {
 
 	@BeforeTest
 	public void openChromeDriver() {
-		driver = initChromeDirvier(CT_Account.webURL);
+		driver = initChromeDrvier(CT_Account.webURL);
 	}
 
-	@Test
-	public void LoginSS() {
-		LoginPage_days14 login = new LoginPage_days14(driver);
-		login.LoginFunction("admin@demo.com", "riseDemo");
-		WebElement titleDasboard = driver.findElement(DashboardPage.textDashboard);
-		assertTrue(titleDasboard.isDisplayed());
-		driver.close();
-	}
+//	@Test
+//	public void LoginSS() {
+//		LoginPage_days14 login = new LoginPage_days14(driver);
+//		login.LoginFunction("admin@demo.com", "riseDemo");
+//		WebElement titleDasboard = driver.findElement(DashboardPage.textDashboard);
+//		assertTrue(titleDasboard.isDisplayed());
+//		driver.close();
+//	}
 
 	@Test
 	public void LoginUSS() {

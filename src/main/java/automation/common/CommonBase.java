@@ -245,7 +245,7 @@ public class CommonBase {
 		}
 		return a;
 	}
-	public WebDriver initChromeDirvier(String URL)
+	public WebDriver initChromeDrvier(String URL)
 	{
 		ChromeOptions options = new ChromeOptions();
 			System.setProperty("webdriver.chrome.driver",

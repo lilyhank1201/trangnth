@@ -9,13 +9,13 @@ public class Client_test extends CommonBase {
 	WebDriver driver;
 	@BeforeTest
 	public void openchromeDriver() {
-		driver= initChromeDirvier(CT_Account.webURL);
+		driver= initChromeDrvier(CT_Account.webURL);
 	}
 	
 	public void addClient() {
 		Login_factory login = new Login_factory();
-		login.LoginFunction("","");
-		//sau đăng nhập thì click client link trên trang dashboad
+// 		login.LoginFunction("","");
+// 		 //sau đăng nhập thì click client link trên trang dashboad
+// 
 	}
-
 }

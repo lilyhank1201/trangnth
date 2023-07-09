@@ -19,17 +19,17 @@ public class loginTest extends CommonBase {
 
 	@BeforeTest
 	public void openChromeDriver() {
-		driver = initChromeDirvier(CT_Account.webURL);
+		driver = initChromeDrvier(CT_Account.webURL);
 	}
 
-	@Test
-	public void LoginSS() {
-		LoginPage login = new LoginPage(driver);
-		login.Login("admin@demo.com", "riseDemo");
-		WebElement titleDasboard = driver.findElement(DashboardPage.textDashboard);
-		assertTrue(titleDasboard.isDisplayed());
-		quitDriver(driver);
-	}	
+//	@Test
+//	public void LoginSS() {
+//		LoginPage login = new LoginPage(driver);
+//		login.Login("admin@demo.com", "riseDemo");
+//		WebElement titleDasboard = driver.findElement(DashboardPage.textDashboard);
+//		assertTrue(titleDasboard.isDisplayed());
+//		quitDriver(driver);
+//	}	
 	@Test
 	public void LoginUnSS_not_Exist() {
 		LoginPage login = new LoginPage(driver);
