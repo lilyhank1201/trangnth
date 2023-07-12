@@ -11,5 +11,6 @@ public class CT_Account {
 //	public static By ELEMENT_LOGOUT_LINK = By.xpath("//*[text()='Logout']/..");
 	
 public static String webURL = "https://rise.fairsketch.com/signin?redirect=https://rise.fairsketch.com/clients";
-	
+
+public static String OpenFlights = "https://techydevs.com/demos/themes/html/trizen-demo/trizen/index.html";	
 }

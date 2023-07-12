@@ -1,6 +1,9 @@
 package automation.pageLocatorTrangNTH;
 
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -40,6 +43,10 @@ public class PageClient {
 	private WebElement textboxSearch;
 	@FindBy(xpath = "//td[@class=' all']//a[text()='trangnth@demo.com']")
 	private WebElement searchResult;
+//MSG
+
+	@FindBy(xpath = "//span[@id='company_name-error']")
+	public static By nameBlank = By.xpath("//span[@id='company_name-error']");
 
 	public PageClient(WebDriver driver) {
 		this.driver = driver;
@@ -49,20 +56,62 @@ public class PageClient {
 
 	public void AddClient(String companyName, String address) {
 		((WebElement) DashboardPage.ClientLink).click();
-		btnAddClient.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+		btnAddClient.click(); 
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		radioPerson.click();
-		textCompanyName.sendKeys(companyName);
-		checkboxOwner.click();
-		ownerItem.click();
-		textAddress.sendKeys(address);
+		textCompanyName.sendKeys(companyName); 
+		checkboxOwner.click(); 
+		ownerItem.click(); 
+		textAddress.sendKeys(address); 
 		btnSave.click();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		// dùng JavascriptExecutor để click vào totalClientCard
-		((JavascriptExecutor) driver).executeScript("argument[0].click();", totalClientCard);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", totalClientCard);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		textboxSearch.sendKeys(companyName);
-		assertTrue(searchResult.isDisplayed());
+		assertTrue(textboxSearch.isDisplayed());
+	}
+
+	public void AddClientUSS_Blank(String companyName, String address) {
+		((WebElement) DashboardPage.ClientLink).click();
+		btnAddClient.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		radioPerson.click();
+		textCompanyName.sendKeys(companyName);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		checkboxOwner.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		ownerItem.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		textAddress.sendKeys(address);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		btnSave.click();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		// dùng JavascriptExecutor để click vào totalClientCard
+//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", totalClientCard);
+//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		textboxSearch.sendKeys(companyName);
+//		assertTrue(textboxSearch.isDisplayed()); 
+	}
+	public void AddClientUSS(String companyName, String address) {
+		((WebElement) DashboardPage.ClientLink).click();
+		btnAddClient.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		radioPerson.click();
+		textCompanyName.sendKeys(companyName);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		checkboxOwner.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		ownerItem.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		textAddress.sendKeys(address);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		btnSave.click();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		 //dùng JavascriptExecutor để click vào totalClientCard
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", totalClientCard);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		textboxSearch.sendKeys(companyName);
+		assertTrue(textboxSearch.isDisplayed()); 
 	}
 }

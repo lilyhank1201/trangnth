@@ -15,10 +15,16 @@ public class DashboardPage {
 	
 	@FindBy(xpath="//span[@class='menu-text ' and normalize-space()='Clients']")
 	public static WebElement ClientLink;
-
+//web máy bay
+	
+	@FindBy(xpath="//a[@id='flight-tab']")
+	public static WebElement Flights;
+	
 	public DashboardPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		
+		 
 	}
 
 }

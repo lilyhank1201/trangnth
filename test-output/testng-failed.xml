@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.TrangNguyen.ClientTestFactory_Days15">
+      <class name="automation.testsuite.TrangNguyen.FLIGHTS_TEST">
         <methods>
-          <include name="AddClient_SS"/>
           <include name="openSystemUnderTest"/>
+          <include name="Search_SS"/>
         </methods>
-      </class> <!-- automation.testsuite.TrangNguyen.ClientTestFactory_Days15 -->
+      </class> <!-- automation.testsuite.TrangNguyen.FLIGHTS_TEST -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
