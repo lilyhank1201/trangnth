@@ -75,6 +75,7 @@ public class PageClient {
 
 	}
 
+
 	public void AddClient(String  Name, String address, String city, CharSequence[] Zip) {
 		((WebElement) DashboardPage.ClientLink).click();
 		btnAddClient.click(); 

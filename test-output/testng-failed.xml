@@ -5,7 +5,7 @@
     <classes>
       <class name="automation.testsuite.TrangNguyen.ClientTestFactory_Days15">
         <methods>
-          <include name="AddClient_SS"/>
+          <include name="AddClientUSS"/>
           <include name="closeChromeBrower"/>
           <include name="openSystemUnderTest"/>
         </methods>

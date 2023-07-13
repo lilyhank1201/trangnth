@@ -37,6 +37,7 @@ public class ClientTestFactory_Days15 extends CommonBase {
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		clientpage.AddClient("com", "mee","han1i", "noi");
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); 
+		driver.close();
 	}
 	
 	@Test
@@ -56,7 +57,6 @@ public class ClientTestFactory_Days15 extends CommonBase {
 		assertTrue(nameBlank.isDisplayed());
 		driver.close();
 	}
-//	
 //	@Test
 //	public void AddClientUSS() { 
 //		//thuc hien login
