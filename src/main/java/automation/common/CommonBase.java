@@ -26,9 +26,11 @@ public class CommonBase {
 	public WebDriver driver;
 	protected String baseUrl = "https://staging.capa.ai/";
 	protected int DEFAULT_TIMEOUT = 20000;
+	//bước nhảy là 1s 1, 1000=1s
 	protected int WAIT_INTERVAL = 1000;
 	public int loopCount = 0;
-	public final int ACTION_REPEAT = 5;
+	//lặp lại
+	public final int ACTION_REPEAT = 5; //lặp lại
 	public Actions action;
 
 	/**
@@ -36,10 +38,13 @@ public class CommonBase {
 	 * 
 	 * @param URL
 	 */
+	//truyền parameter động(String... URL)
 	public WebDriver initDriverTest(String... URL) {
+		//cắt từ paramter
 		String url1 = URL.length > 0 ? URL[0] : baseUrl;
 		String proName = URL.length > 2 ? URL[2] : "";
 		String broName = URL.length > 1 ? URL[1] : "chrome";
+		//nếu ko muốn truyền paramter vào thì sẽ tuyền 1 cái property vào 
 		String url2 = System.getProperty("Url");
 		String browser = System.getProperty("browser");
 		String plaForm = System.getProperty("platForm");
@@ -53,7 +58,8 @@ public class CommonBase {
 			System.setProperty("webdriver.chrome.driver",
 			System.getProperty("user.dir") + "\\driver\\chromedriver.exe");		
 			dr = new ChromeDriver();
-		} else if ("iexplorer".equals(browser)) {
+		} 
+		else if ("iexplorer".equals(browser)) {
 			dr = new InternetExplorerDriver();
 		} else if ("safari".equals(browser)) {
 			dr = new SafariDriver();
@@ -245,6 +251,7 @@ public class CommonBase {
 		}
 		return a;
 	}
+	//nếu chỉ muốn chạt chrome thì chỉ cần mỗi cái này
 	public WebDriver initChromeDrvier(String URL)
 	{
 		ChromeOptions options = new ChromeOptions();

@@ -56,7 +56,7 @@ public class ClientTestFactory_Days15 extends CommonBase {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		assertTrue(nameBlank.isDisplayed());
 		driver.close();
-	}
+	} 
 //	@Test
 //	public void AddClientUSS() { 
 //		//thuc hien login

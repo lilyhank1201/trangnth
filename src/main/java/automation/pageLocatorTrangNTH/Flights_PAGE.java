@@ -95,11 +95,11 @@ public class Flights_PAGE {
 		PageFactory.initElements(driver, this);
 }
 	
-	public void SearchSS (String NewYork, String Paris, String Keys, String TAB  ) {
-		((WebElement) DashboardPage.Flights).click(); 
-		Flight_tab.click();   
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		OneVayTab.click();   
+	public void SearchSS (String NewYork, String Paris, String KeyValue, String TAB  ) {
+//		((WebElement) DashboardPage.Flights).click(); 
+////		Flight_tab.click();   
+//		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+//		OneVayTab.click();   
 		Flyingfrom.sendKeys("Flyingfrom");  
 		Flyingto.sendKeys("Flyingto");  
 		Departing.click();  
