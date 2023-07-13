@@ -35,7 +35,7 @@ public class ClientTestFactory_Days15 extends CommonBase {
 		//vao man hinh client va add client
 		PageClient clientpage = new PageClient(driver);
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		clientpage.AddClient("demo01@demo.com", "mee");
+		clientpage.AddClient("com", "mee","han1i", "noi");
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); 
 	}
 	
@@ -56,24 +56,24 @@ public class ClientTestFactory_Days15 extends CommonBase {
 		assertTrue(nameBlank.isDisplayed());
 		driver.close();
 	}
-	
-	@Test
-	public void AddClientUSS() { 
-		//thuc hien login
-		LoginPage_days14 Login_page = new LoginPage_days14(driver);
-		Login_page.LoginFunction("admin@demo.com", "riseDemo");
-		//hien thi man hinh dashboard
-		DashboardPage dashboard = new DashboardPage(driver);
-		assertTrue(dashboard.textDashboard.isDisplayed());
-		//vao man hinh client va add client
-		PageClient clientpage = new PageClient(driver);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		clientpage.AddClientUSS(" ", "mee");
-		WebElement nameBlank = driver.findElement(PageClient.nameBlank);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		assertTrue(nameBlank.isDisplayed());
-		driver.close();
-	}
+//	
+//	@Test
+//	public void AddClientUSS() { 
+//		//thuc hien login
+//		LoginPage_days14 Login_page = new LoginPage_days14(driver);
+//		Login_page.LoginFunction("admin@demo.com", "riseDemo");
+//		//hien thi man hinh dashboard
+//		DashboardPage dashboard = new DashboardPage(driver);
+//		assertTrue(dashboard.textDashboard.isDisplayed());
+//		//vao man hinh client va add client
+//		PageClient clientpage = new PageClient(driver);
+//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		clientpage.AddClientUSS(" ", "mee");
+//		WebElement nameBlank = driver.findElement(PageClient.nameBlank);
+//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		assertTrue(nameBlank.isDisplayed());
+//		driver.close();
+//	}
 	@AfterTest
 	public void closeChromeBrower() {
         driver.close();

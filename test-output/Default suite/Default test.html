@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 12 17:51:03 ICT 2023</td>
+<td>Started on:</td><td>Thu Jul 13 15:52:20 ICT 2023</td>
 </tr>
-<tr><td>Total time:</td><td>7 seconds (7997 ms)</td>
+<tr><td>Total time:</td><td>63 seconds (63859 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,14 +75,37 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='automation.testsuite.TrangNguyen.FLIGHTS_TEST.Search_SS()'><b>Search_SS</b><br>Test class: automation.testsuite.TrangNguyen.FLIGHTS_TEST</td>
-<td><div><pre>java.lang.Error: Unresolved compilation problems: 
-	The method clear() is undefined for the type Flights_PAGE
-	The method sendKeys(String) is undefined for the type Flights_PAGE
-	TAB cannot be resolved or is not a field
-
-	at automation.pageLocatorTrangNTH.Flights_PAGE.SearchSS(Flights_PAGE.java:109)
-	at automation.testsuite.TrangNguyen.FLIGHTS_TEST.Search_SS(FLIGHTS_TEST.java:26)
+<td title='automation.testsuite.TrangNguyen.ClientTestFactory_Days15.AddClient_SS()'><b>AddClient_SS</b><br>Test class: automation.testsuite.TrangNguyen.ClientTestFactory_Days15</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: Returned value cannot be converted to WebElement: {stacktrace=Backtrace:
+	GetHandleVerifier [0x00908893+48451]
+	(No symbol) [0x0089B8A1]
+	(No symbol) [0x007A4F20]
+	(No symbol) [0x007C7A42]
+	(No symbol) [0x007C8F2D]
+	GetHandleVerifier [0x00B68E3A+2540266]
+	GetHandleVerifier [0x00BA8959+2801161]
+	GetHandleVerifier [0x00BA295C+2776588]
+	GetHandleVerifier [0x00992280+612144]
+	(No symbol) [0x008A4F6C]
+	(No symbol) [0x008A11D8]
+	(No symbol) [0x008A12BB]
+	(No symbol) [0x00894857]
+	BaseThreadInitThunk [0x76BB00C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77AD7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77AD7AEE+238]
+, error=invalid session id, message=invalid session id}
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;trangnth1&apos;, ip: &apos;192.168.40.76&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy11.clear(Unknown Source)
+	at automation.pageLocatorTrangNTH.LoginPage_days14.LoginFunction(LoginPage_days14.java:43)
+	at automation.testsuite.TrangNguyen.ClientTestFactory_Days15.AddClient_SS(ClientTestFactory_Days15.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,14 +134,40 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace916958177", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace916958177'><pre>java.lang.Error: Unresolved compilation problems: 
-	The method clear() is undefined for the type Flights_PAGE
-	The method sendKeys(String) is undefined for the type Flights_PAGE
-	TAB cannot be resolved or is not a field
-
-	at automation.pageLocatorTrangNTH.Flights_PAGE.SearchSS(Flights_PAGE.java:109)
-	at automation.testsuite.TrangNguyen.FLIGHTS_TEST.Search_SS(FLIGHTS_TEST.java:26)
+Caused by: java.lang.ClassCastException: class com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to class org.openqa.selenium.WebElement (com.google.common.collect.Maps$TransformedEntriesMap and org.openqa.selenium.WebElement are in unnamed module of loader &apos;app&apos;)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	... 36 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace2024945312", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2024945312'><pre>org.openqa.selenium.WebDriverException: Returned value cannot be converted to WebElement: {stacktrace=Backtrace:
+	GetHandleVerifier [0x00908893+48451]
+	(No symbol) [0x0089B8A1]
+	(No symbol) [0x007A4F20]
+	(No symbol) [0x007C7A42]
+	(No symbol) [0x007C8F2D]
+	GetHandleVerifier [0x00B68E3A+2540266]
+	GetHandleVerifier [0x00BA8959+2801161]
+	GetHandleVerifier [0x00BA295C+2776588]
+	GetHandleVerifier [0x00992280+612144]
+	(No symbol) [0x008A4F6C]
+	(No symbol) [0x008A11D8]
+	(No symbol) [0x008A12BB]
+	(No symbol) [0x00894857]
+	BaseThreadInitThunk [0x76BB00C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77AD7B1E+286]
+	RtlGetAppContainerNamedObjectPath [0x77AD7AEE+238]
+, error=invalid session id, message=invalid session id}
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;trangnth1&apos;, ip: &apos;192.168.40.76&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy11.clear(Unknown Source)
+	at automation.pageLocatorTrangNTH.LoginPage_days14.LoginFunction(LoginPage_days14.java:43)
+	at automation.testsuite.TrangNguyen.ClientTestFactory_Days15.AddClient_SS(ClientTestFactory_Days15.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -147,9 +196,25 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassCastException: class com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to class org.openqa.selenium.WebElement (com.google.common.collect.Maps$TransformedEntriesMap and org.openqa.selenium.WebElement are in unnamed module of loader &apos;app&apos;)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	... 36 more
 </pre></div></td>
 <td>0</td>
-<td>automation.testsuite.TrangNguyen.FLIGHTS_TEST@5524cca1</td></tr>
+<td>automation.testsuite.TrangNguyen.ClientTestFactory_Days15@16eb3ea3</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='automation.testsuite.TrangNguyen.ClientTestFactory_Days15.AddClientUSS_Blank()'><b>AddClientUSS_Blank</b><br>Test class: automation.testsuite.TrangNguyen.ClientTestFactory_Days15</td>
+<td></td>
+<td>11</td>
+<td>automation.testsuite.TrangNguyen.ClientTestFactory_Days15@16eb3ea3</td></tr>
 </table><p>
 </body>
 </html>

@@ -104,11 +104,11 @@ public class Flights_PAGE {
 		Flyingto.sendKeys("Flyingto");  
 		Departing.click();  
 		day_Departing.click();
-		Flights_PAGE dateBox = new Flights_PAGE(driver);
+		WebElement dateBox = driver.findElement(By.xpath("(//label[text()='Departing']/following-sibling::div//input[@name='daterange-single'])[1]")); 
 		((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('readonly','readonly')",dateBox  );
 		dateBox.clear();
 		dateBox.sendKeys("25092024");   
-		dateBox.sendKeys( Keys.TAB);   
+		dateBox.sendKeys(Keys.TAB);   
 		Passengers.click();  
 		Adults_Passengers.click();  
 		Up_Adults_Passengers.click(); 

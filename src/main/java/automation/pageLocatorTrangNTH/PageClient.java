@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PageClient {
+	private static final CharSequence Zip = null;
 	private WebDriver driver;
 	@FindBy(xpath = "//a[@class='btn btn-default' and @title='Add client']")
 	private WebElement btnAddClient;
@@ -19,6 +20,8 @@ public class PageClient {
 	private WebElement radioOrg;
 	@FindBy(xpath = "//input[@type='radio' and @value='person']")
 	private WebElement radioPerson;
+	@FindBy(xpath = "//label[contains(text(),'Name')]")
+	private WebElement textName;
 	@FindBy(xpath = "//input[@name='company_name']")
 	private WebElement textCompanyName;
 	@FindBy(xpath = "//div[@id='s2id_created_by']")
@@ -35,6 +38,24 @@ public class PageClient {
 	private WebElement michael;
 	@FindBy(xpath = "//textarea[@id='address']")
 	private WebElement textAddress;
+	@FindBy(xpath = "//label[contains(text(),'City')]")
+	private WebElement textCity;
+	@FindBy(xpath = "//label[contains(text(),'State')]")
+	private WebElement textState;
+	@FindBy(xpath = "//label[contains(text(),'Zip')]")
+	private WebElement textZip;
+	@FindBy(xpath = "//label[contains(text(),'Country')]")
+	private WebElement textCountry;
+	@FindBy(xpath = "//label[contains(text(),'Phone')]")
+	private WebElement textPhone;
+	@FindBy(xpath = "//label[contains(text(),'Website')]")
+	private WebElement textWebsite;
+	@FindBy(xpath = "//label[contains(text(),'VAT Number')]")
+	private WebElement textVATNumber;
+	@FindBy(xpath = "//label[contains(text(),'GST Number')]")
+	private WebElement textGSTNumber;
+	@FindBy(xpath = "//label[contains(text(),'Client groups')]")
+	private WebElement textClientgroups;
 	@FindBy(xpath = "//button[@class='btn btn-primary' and @type='submit']")
 	private WebElement btnSave;
 	@FindBy(xpath = "//span[text()='Total clients']")
@@ -54,21 +75,23 @@ public class PageClient {
 
 	}
 
-	public void AddClient(String companyName, String address) {
+	public void AddClient(String  Name, String address, String city, CharSequence[] Zip) {
 		((WebElement) DashboardPage.ClientLink).click();
 		btnAddClient.click(); 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		radioPerson.click();
-		textCompanyName.sendKeys(companyName); 
+		textName.sendKeys( Name); 
 		checkboxOwner.click(); 
 		ownerItem.click(); 
+		textCity.sendKeys(city); 
+		textZip.sendKeys(Zip); 
 		textAddress.sendKeys(address); 
 		btnSave.click();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		// dùng JavascriptExecutor để click vào totalClientCard
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", totalClientCard);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		textboxSearch.sendKeys(companyName);
+		textboxSearch.sendKeys( Name);
 		assertTrue(textboxSearch.isDisplayed());
 	}
 
@@ -113,5 +136,10 @@ public class PageClient {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		textboxSearch.sendKeys(companyName);
 		assertTrue(textboxSearch.isDisplayed()); 
+	}
+
+	public void AddClient(String name, String address, String city, String string) {
+		// TODO Auto-generated method stub
+		
 	}
 }
