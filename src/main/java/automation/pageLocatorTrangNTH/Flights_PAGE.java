@@ -95,22 +95,23 @@ public class Flights_PAGE {
 		PageFactory.initElements(driver, this);
 }
 	
-	public void SearchSS (String NewYork, String Paris, String Keys, String TAB  ) {
-		((WebElement) DashboardPage.Flights).click(); 
-		Flight_tab.click();   
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		OneVayTab.click();   
+	public void SearchSS (String NewYork, String Paris, String String ) {
+// Hiện tại ko cần vì nố là default nó sẽ k check
+		
+//		((WebElement) DashboardPage.Flights).click(); 
+//		Flight_tab.click();   
+//		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+//		OneVayTab.click();   
 		Flyingfrom.sendKeys("Flyingfrom");  
 		Flyingto.sendKeys("Flyingto");  
-		Departing.click();  
-		day_Departing.click();
+		//Departing.click();  
+		//day_Departing.click();
 		WebElement dateBox = driver.findElement(By.xpath("(//label[text()='Departing']/following-sibling::div//input[@name='daterange-single'])[1]")); 
 		((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('readonly','readonly')",dateBox  );
 		dateBox.clear();
 		dateBox.sendKeys("25092024");   
 		dateBox.sendKeys(Keys.TAB);   
-		Passengers.click();  
-		Adults_Passengers.click();  
+		//Passengers.click();   
 		Up_Adults_Passengers.click(); 
 		Up_Infants_Passengers.click(); 
 		Up_Children_Passengers.click(); 
