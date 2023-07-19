@@ -94,12 +94,12 @@ public class Flights_PAGE {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 }
-	
-	public void SearchSS (String NewYork, String Paris, String String ) {
+
+	public void SearchSS (String NewYork, String Paris, String KeyValue, String TAB  ) {
 // Hiện tại ko cần vì nố là default nó sẽ k check
-		
+		 
 //		((WebElement) DashboardPage.Flights).click(); 
-//		Flight_tab.click();   
+////		Flight_tab.click();    
 //		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 //		OneVayTab.click();   
 		Flyingfrom.sendKeys("Flyingfrom");  

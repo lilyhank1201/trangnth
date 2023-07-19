@@ -93,6 +93,8 @@ public class PageClient {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", totalClientCard);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		textboxSearch.sendKeys( Name);
+		//dùng javascript dể dừng việc load page
+		((JavascriptExecutor)driver).executeScript("windown,stop();");
 		assertTrue(textboxSearch.isDisplayed());
 	}
 

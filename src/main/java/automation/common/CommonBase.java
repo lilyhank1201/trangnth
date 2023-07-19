@@ -1,9 +1,13 @@
 package automation.common;
 import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor; 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -21,14 +25,16 @@ import org.testng.Assert;
 
 import static automation.common.TestLogger.*;
 
-public class CommonBase {
+public class CommonBase  {
 	private static final String URL = null;
 	public WebDriver driver;
 	protected String baseUrl = "https://staging.capa.ai/";
 	protected int DEFAULT_TIMEOUT = 20000;
+	//bước nhảy là 1s 1, 1000=1s
 	protected int WAIT_INTERVAL = 1000;
 	public int loopCount = 0;
-	public final int ACTION_REPEAT = 5;
+	//lặp lại
+	public final int ACTION_REPEAT = 5; //lặp lại
 	public Actions action;
 
 	/**
@@ -36,10 +42,13 @@ public class CommonBase {
 	 * 
 	 * @param URL
 	 */
+	//truyền parameter động(String... URL)
 	public WebDriver initDriverTest(String... URL) {
+		//cắt từ paramter
 		String url1 = URL.length > 0 ? URL[0] : baseUrl;
 		String proName = URL.length > 2 ? URL[2] : "";
 		String broName = URL.length > 1 ? URL[1] : "chrome";
+		//nếu ko muốn truyền paramter vào thì sẽ tuyền 1 cái property vào 
 		String url2 = System.getProperty("Url");
 		String browser = System.getProperty("browser");
 		String plaForm = System.getProperty("platForm");
@@ -53,7 +62,8 @@ public class CommonBase {
 			System.setProperty("webdriver.chrome.driver",
 			System.getProperty("user.dir") + "\\driver\\chromedriver.exe");		
 			dr = new ChromeDriver();
-		} else if ("iexplorer".equals(browser)) {
+		} 
+		else if ("iexplorer".equals(browser)) {
 			dr = new InternetExplorerDriver();
 		} else if ("safari".equals(browser)) {
 			dr = new SafariDriver();
@@ -135,13 +145,14 @@ public class CommonBase {
 	 * 
 	 * @param dr
 	 */
-	public void quitDriver(WebDriver dr) {
+	public void quitDriver(WebDriver dr) { {
 		if (dr.toString().contains("null")) {
 			System.out.print("All Browser windows are closed ");
 		} else {
-			driver.manage().deleteAllCookies();
-			driver.close();
-		}
+			dr.manage().timeouts().implicitlyWait(0,TimeUnit.SECONDS); 
+			dr.manage().deleteAllCookies();
+			dr.close();
+		}}
 	}
 
 	/**
@@ -245,6 +256,7 @@ public class CommonBase {
 		}
 		return a;
 	}
+	//nếu chỉ muốn chạt chrome thì chỉ cần mỗi cái này
 	public WebDriver initChromeDrvier(String URL)
 	{
 		ChromeOptions options = new ChromeOptions();
@@ -256,4 +268,77 @@ public class CommonBase {
 			return driver;
 	}
 
+	//public WebDriver driver;	
+	public int initWaitTime = 10;
+	public WebDriver initChromeDriver(String URL)
+	{
+		ChromeOptions options = new ChromeOptions();
+		System.setProperty("webdriver.chrome.driver",
+		System.getProperty("user.dir") + "\\driver\\chromedriver.exe");		
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		driver.get(URL);
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		return driver;
+	}
+
+	public void inputTextJavaScriptInnerHTML(By inputElement, String companyName) {
+		WebElement element = driver.findElement(inputElement);
+		try {
+			((JavascriptExecutor) driver).executeScript("arguments[0].innerHTML = '" + companyName + "'", element);
+		} catch (StaleElementReferenceException ex) {
+			pause(1000);
+			inputTextJavaScriptInnerHTML(inputElement, companyName);
+		}
+	}
+	
+	public void inputTextJavaScriptValue(By locator, String value) {
+		WebElement element = getElementPresentDOM(locator);
+		try {
+			((JavascriptExecutor) driver).executeScript("arguments[0].value = '" + value + "'", element);
+		} catch (StaleElementReferenceException ex) {
+			pause(1000);
+			inputTextJavaScriptValue(locator, value);
+		}
+	}
+	
+	public void scrollToElement(By locator) {
+		WebElement element = getElementPresentDOM(locator);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	}
+
+	public void clickJavaScript(By locator)
+	{
+		WebElement element = getElementPresentDOM(locator);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+	}
+	
+	public WebElement getElementPresentDOM(By locator)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, initWaitTime);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));	
+		return driver.findElement(locator);
+	}
+	
+	public boolean isElementPresent(By locator)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, initWaitTime);
+		wait.until(ExpectedConditions.visibilityOf(getElementPresentDOM(locator)));
+		return getElementPresentDOM(locator).isDisplayed();
+	}
+	public void click(By locator)
+	{
+		WebElement element = getElementPresentDOM(locator);
+		WebDriverWait wait = new WebDriverWait(driver, initWaitTime);
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
+		element.click();
+	}
+	public void type(By locator, String value)
+	{
+		WebElement element = getElementPresentDOM(locator);
+		element.sendKeys(value);
+	} 
+ 
+
+	  
 }

@@ -25,7 +25,7 @@ public class FLIGHTS_TEST extends CommonBase{
 	public void Search_SS() { 
 
 		Flights_PAGE FlightsPage = new Flights_PAGE(driver); 
-		FlightsPage.SearchSS("NewYork", "Paris","" );
+		FlightsPage.SearchSS("NewYork", "Paris","","" );
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); 
 		quitDriver(driver);
 }}
