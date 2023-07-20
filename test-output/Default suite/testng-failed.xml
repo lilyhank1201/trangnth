@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Windown_iframe.WindownPopup">
+      <class name="Windown_iframe.iFrame_ExpliciWait">
         <methods>
-          <include name="openBrowser"/>
-          <include name="TestPopupWindown"/>
+          <include name="openPage"/>
+          <include name="findIFrame"/>
         </methods>
-      </class> <!-- Windown_iframe.WindownPopup -->
+      </class> <!-- Windown_iframe.iFrame_ExpliciWait -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
