@@ -1,6 +1,5 @@
 package automation.testsuite.TrangNguyen;
 
-import static org.testng.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.thoughtworks.selenium.webdriven.commands.Close;
 
 import automation.common.CommonBase;
 import automation.constant.CT_Account; 
@@ -25,7 +23,7 @@ public class FLIGHTS_TEST extends CommonBase{
 	public void Search_SS() { 
 
 		Flights_PAGE FlightsPage = new Flights_PAGE(driver); 
-		FlightsPage.SearchSS("NewYork", "Paris","","" );
+		FlightsPage.SearchSS("NewYork", "Paris","25092024");
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); 
 		quitDriver(driver);
 }}

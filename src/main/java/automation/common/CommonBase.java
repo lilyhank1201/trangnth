@@ -165,11 +165,11 @@ public int findIFrame() {
 	System.out.println("số lượng frame" + size);
 	for (int i=0 ; i<size; i++) {
 		driver.switchTo().frame(i);
-		int numberOfIFrame = driver.findElements(By.xpath("//button[text()='Gửi ngay']").size();
+		int numberOfIFrame = driver.findElements(By.xpath("//button[text()='Gửi ngay']")).size();
 		System.out.println("elementCanTim ở vị trí:" + numberOfIFrame);
 		if(numberOfIFrame !=0)
 		{
-		int indexOfIFrame = i ;
+			indexOfIFrame = i ;
 		break;
 		} 
 		///sau khi in ra element cần tìm phải trở về frame cha để tìm tiếp đến hết 

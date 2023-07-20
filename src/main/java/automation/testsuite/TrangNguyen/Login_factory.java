@@ -37,6 +37,40 @@ public class Login_factory extends CommonBase {
 		driver.close();
 	}
 
+	@Test
+	public void Login_ErrorUsername() {
+		LoginPage_days14 login = new LoginPage_days14(driver);
+		login.LoginFunction("admi1n@demo.com", "riseDemo");
+		WebElement txtError = driver.findElement(LoginPage_days14.ErrorUsername);
+		assertTrue(txtError.isDisplayed());
+		driver.close();
+	}
+
+	@Test
+	public void Login_Emailisrequired() {
+		LoginPage_days14 login = new LoginPage_days14(driver);
+		login.LoginFunction("admi1n@demo.com", "riseDemo");
+		WebElement txtError = driver.findElement(LoginPage_days14.Emailisrequired);
+		assertTrue(txtError.isDisplayed());
+		driver.close();
+	} 
+	@Test
+	public void Login_Emailisinvalid() {
+		LoginPage_days14 login = new LoginPage_days14(driver);
+		login.LoginFunction("admi1n@demo.com", "riseDemo");
+		WebElement txtError = driver.findElement(LoginPage_days14.Emailisinvalid);
+		assertTrue(txtError.isDisplayed());
+		driver.close();
+	}
+	@Test
+	public void Login_PWisrequired() {
+		LoginPage_days14 login = new LoginPage_days14(driver);
+		login.LoginFunction("admi1n@demo.com", "riseDemo");
+		WebElement txtError = driver.findElement(LoginPage_days14.PWisrequired);
+		assertTrue(txtError.isDisplayed());
+		driver.close();
+	}
+
 	@AfterTest
 	public void closeChromeBrower() {
 		quitDriver(driver);

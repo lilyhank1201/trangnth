@@ -31,7 +31,7 @@ public class LoginPage_days14 {
 	@FindBy(xpath = "//span[@id='email-error']")
 	public static By Emailisinvalid;
 
-	@FindBy(xpath = "//span[@id='email-error']")
+	@FindBy(xpath = "//span[@id='password-error']")
 	public static By PWisrequired;
 
 	public LoginPage_days14(WebDriver driver) {

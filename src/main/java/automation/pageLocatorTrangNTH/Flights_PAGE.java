@@ -95,29 +95,30 @@ public class Flights_PAGE {
 		PageFactory.initElements(driver, this);
 }
 
-	public void SearchSS (String NewYork, String Paris, String KeyValue, String TAB  ) {
-// Hiện tại ko cần vì nố là default nó sẽ k check
-		 
+	public void SearchSS (String _Flyingfrom, String _Flyingto, String _Departing ) {
+// Hiện tại ko cần vì nố là default nó sẽ k check 
 //		((WebElement) DashboardPage.Flights).click(); 
 ////		Flight_tab.click();    
 //		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 //		OneVayTab.click();   
-		Flyingfrom.sendKeys("Flyingfrom");  
-		Flyingto.sendKeys("Flyingto");  
+		
+		Flyingfrom.sendKeys(_Flyingfrom);  
+		Flyingto.sendKeys(_Flyingto);  
 		//Departing.click();  
 		//day_Departing.click();
 		WebElement dateBox = driver.findElement(By.xpath("(//label[text()='Departing']/following-sibling::div//input[@name='daterange-single'])[1]")); 
 		((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('readonly','readonly')",dateBox  );
 		dateBox.clear();
-		dateBox.sendKeys("25092024");   
-		dateBox.sendKeys(Keys.TAB);   
-		//Passengers.click();   
-		Up_Adults_Passengers.click(); 
-		Up_Infants_Passengers.click(); 
-		Up_Children_Passengers.click(); 
-		Coach.click();
-		Select_Economy_Coach.click();
-		btnSearchNow.click();
+		dateBox.sendKeys(_Departing);   
+		dateBox.sendKeys(Keys.TAB);    
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", Passengers); 
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", Up_Adults_Passengers); 
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", Up_Infants_Passengers);
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", Up_Children_Passengers); 
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", Coach);
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", Select_Economy_Coach);
+	((JavascriptExecutor) driver).executeScript("arguments[0].click();", btnSearchNow);
+	 
  		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 //		btnSave.click();
 //		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);

@@ -36,7 +36,7 @@ public class iFrame_ExpliciWait extends CommonBase {
 //	for (int i=0 ; i<size; i++) {
 //		driver.switchTo().frame(i);
 //		int numberOfIFrame = driver.findElements
-//				(By.xpath("//button[text()='Gửi ngay']").size();
+//				(By.xpath("//button[text()='Gửi ngay']")).size();
 //		System.out.println("elementCanTim ở vị trí:" + numberOfIFrame);
 //		if(numberOfIFrame !=0)
 //		{

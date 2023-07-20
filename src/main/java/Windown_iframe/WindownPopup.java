@@ -1,15 +1,14 @@
 package Windown_iframe;
  
-import static org.testng.AssertJUnit.assertEquals;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import automation.common.CommonBase;
-import jxl.common.Assert;
 
 public class WindownPopup extends CommonBase {
 	@BeforeMethod
@@ -54,6 +53,7 @@ public class WindownPopup extends CommonBase {
 				String Text = driver.findElement(By.xpath("//table//td//h2")).getText();
 				System.out.println(Text);
 				Assert.assertEquals(Text, "Access detail to demo site");
+
 				// Closeing the child windown
 				driver.close();
 

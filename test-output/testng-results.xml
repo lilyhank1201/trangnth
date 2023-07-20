@@ -1,68 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-20T15:57:20 ICT" name="Default suite" finished-at="2023-07-20T15:57:25 ICT" duration-ms="5285">
+  <suite started-at="2023-07-20T20:33:36 ICT" name="Default suite" finished-at="2023-07-20T20:33:44 ICT" duration-ms="7893">
     <groups>
     </groups>
-    <test started-at="2023-07-20T15:57:20 ICT" name="Default test" finished-at="2023-07-20T15:57:25 ICT" duration-ms="5285">
-      <class name="Windown_iframe.iFrame_ExpliciWait">
-        <test-method is-config="true" signature="openPage()[pri:0, instance:Windown_iframe.iFrame_ExpliciWait@196a42c3]" started-at="2023-07-20T15:57:20 ICT" name="openPage" finished-at="2023-07-20T15:57:25 ICT" duration-ms="4838" status="PASS">
+    <test started-at="2023-07-20T20:33:36 ICT" name="Default test" finished-at="2023-07-20T20:33:44 ICT" duration-ms="7893">
+      <class name="automation.testsuite.TrangNguyen.FLIGHTS_TEST">
+        <test-method is-config="true" signature="openSystemUnderTest()[pri:0, instance:automation.testsuite.TrangNguyen.FLIGHTS_TEST@6e9a5ed8]" started-at="2023-07-20T20:33:36 ICT" name="openSystemUnderTest" finished-at="2023-07-20T20:33:42 ICT" duration-ms="5989" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openPage -->
-        <test-method signature="handleIFrame()[pri:0, instance:Windown_iframe.iFrame_ExpliciWait@196a42c3]" started-at="2023-07-20T15:57:25 ICT" name="handleIFrame" finished-at="2023-07-20T15:57:25 ICT" duration-ms="399" status="FAIL">
-          <exception class="java.lang.Error">
-            <message>
-              <![CDATA[Unresolved compilation problems: 
-The method size() is undefined for the type By
-Syntax error, insert ")" to complete Expression
-Duplicate local variable indexOfIFrame
-]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Error: Unresolved compilation problems: 
-The method size() is undefined for the type By
-Syntax error, insert ")" to complete Expression
-Duplicate local variable indexOfIFrame
-
-at automation.common.CommonBase.findIFrame(CommonBase.java:168)
-at Windown_iframe.iFrame_ExpliciWait.handleIFrame(iFrame_ExpliciWait.java:25)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Error -->
+        </test-method> <!-- openSystemUnderTest -->
+        <test-method signature="Search_SS()[pri:0, instance:automation.testsuite.TrangNguyen.FLIGHTS_TEST@6e9a5ed8]" started-at="2023-07-20T20:33:42 ICT" name="Search_SS" finished-at="2023-07-20T20:33:44 ICT" duration-ms="1858" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- handleIFrame -->
-      </class> <!-- Windown_iframe.iFrame_ExpliciWait -->
+        </test-method> <!-- Search_SS -->
+      </class> <!-- automation.testsuite.TrangNguyen.FLIGHTS_TEST -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
