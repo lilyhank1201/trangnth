@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-20T15:07:23 ICT" name="Default suite" finished-at="2023-07-20T15:07:31 ICT" duration-ms="7720">
+  <suite started-at="2023-07-20T15:57:20 ICT" name="Default suite" finished-at="2023-07-20T15:57:25 ICT" duration-ms="5285">
     <groups>
     </groups>
-    <test started-at="2023-07-20T15:07:23 ICT" name="Default test" finished-at="2023-07-20T15:07:31 ICT" duration-ms="7720">
+    <test started-at="2023-07-20T15:57:20 ICT" name="Default test" finished-at="2023-07-20T15:57:25 ICT" duration-ms="5285">
       <class name="Windown_iframe.iFrame_ExpliciWait">
-        <test-method is-config="true" signature="openPage()[pri:0, instance:Windown_iframe.iFrame_ExpliciWait@196a42c3]" started-at="2023-07-20T15:07:23 ICT" name="openPage" finished-at="2023-07-20T15:07:31 ICT" duration-ms="7668" status="PASS">
+        <test-method is-config="true" signature="openPage()[pri:0, instance:Windown_iframe.iFrame_ExpliciWait@196a42c3]" started-at="2023-07-20T15:57:20 ICT" name="openPage" finished-at="2023-07-20T15:57:25 ICT" duration-ms="4838" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openPage -->
-        <test-method signature="findIFrame()[pri:0, instance:Windown_iframe.iFrame_ExpliciWait@196a42c3]" started-at="2023-07-20T15:07:31 ICT" name="findIFrame" finished-at="2023-07-20T15:07:31 ICT" duration-ms="6" status="FAIL">
+        <test-method signature="handleIFrame()[pri:0, instance:Windown_iframe.iFrame_ExpliciWait@196a42c3]" started-at="2023-07-20T15:57:25 ICT" name="handleIFrame" finished-at="2023-07-20T15:57:25 ICT" duration-ms="399" status="FAIL">
           <exception class="java.lang.Error">
             <message>
               <![CDATA[Unresolved compilation problems: 
-The method size() is undefined for the type WebElement
 The method size() is undefined for the type By
 Syntax error, insert ")" to complete Expression
+Duplicate local variable indexOfIFrame
 ]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Error: Unresolved compilation problems: 
-The method size() is undefined for the type WebElement
 The method size() is undefined for the type By
 Syntax error, insert ")" to complete Expression
+Duplicate local variable indexOfIFrame
 
-at Windown_iframe.iFrame_ExpliciWait.findIFrame(iFrame_ExpliciWait.java:32)
+at automation.common.CommonBase.findIFrame(CommonBase.java:168)
+at Windown_iframe.iFrame_ExpliciWait.handleIFrame(iFrame_ExpliciWait.java:25)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -60,7 +61,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- findIFrame -->
+        </test-method> <!-- handleIFrame -->
       </class> <!-- Windown_iframe.iFrame_ExpliciWait -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

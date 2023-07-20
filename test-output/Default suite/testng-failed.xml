@@ -6,7 +6,7 @@
       <class name="Windown_iframe.iFrame_ExpliciWait">
         <methods>
           <include name="openPage"/>
-          <include name="findIFrame"/>
+          <include name="handleIFrame"/>
         </methods>
       </class> <!-- Windown_iframe.iFrame_ExpliciWait -->
     </classes>

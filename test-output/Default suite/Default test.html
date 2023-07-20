@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 20 15:07:23 ICT 2023</td>
+<td>Started on:</td><td>Thu Jul 20 15:57:20 ICT 2023</td>
 </tr>
-<tr><td>Total time:</td><td>7 seconds (7720 ms)</td>
+<tr><td>Total time:</td><td>5 seconds (5285 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,13 +75,14 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Windown_iframe.iFrame_ExpliciWait.findIFrame()'><b>findIFrame</b><br>Test class: Windown_iframe.iFrame_ExpliciWait</td>
+<td title='Windown_iframe.iFrame_ExpliciWait.handleIFrame()'><b>handleIFrame</b><br>Test class: Windown_iframe.iFrame_ExpliciWait</td>
 <td><div><pre>java.lang.Error: Unresolved compilation problems: 
-	The method size() is undefined for the type WebElement
 	The method size() is undefined for the type By
 	Syntax error, insert &quot;)&quot; to complete Expression
+	Duplicate local variable indexOfIFrame
 
-	at Windown_iframe.iFrame_ExpliciWait.findIFrame(iFrame_ExpliciWait.java:32)
+	at automation.common.CommonBase.findIFrame(CommonBase.java:168)
+	at Windown_iframe.iFrame_ExpliciWait.handleIFrame(iFrame_ExpliciWait.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,13 +111,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1481594007", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1481594007'><pre>java.lang.Error: Unresolved compilation problems: 
-	The method size() is undefined for the type WebElement
+</pre></div><a href='#' onClick='toggleBox("stack-trace584501954", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace584501954'><pre>java.lang.Error: Unresolved compilation problems: 
 	The method size() is undefined for the type By
 	Syntax error, insert &quot;)&quot; to complete Expression
+	Duplicate local variable indexOfIFrame
 
-	at Windown_iframe.iFrame_ExpliciWait.findIFrame(iFrame_ExpliciWait.java:32)
+	at automation.common.CommonBase.findIFrame(CommonBase.java:168)
+	at Windown_iframe.iFrame_ExpliciWait.handleIFrame(iFrame_ExpliciWait.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
